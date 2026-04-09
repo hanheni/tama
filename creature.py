@@ -3,7 +3,7 @@ import os
 import time
 
 creature = {
-        "name": "Tama",
+        "name": "Мишенька",
         "hunger": 7,
         "happiness": 3,
         "energy": 5,
@@ -25,23 +25,23 @@ def status():
 def feed():
         if creature["hunger"] > 0:
                 creature["hunger"] -= 1
-                print("You've fed Tama!")
+                print("You've fed " + creature["name"])
         else:
-                print("Tama is full!")
+                print(creature["name"] + " is full!")
 
 def play():
         if creature["happiness"] <10:
                 creature["happiness"] += 1
-                print("You've played with Tama!")
+                print("You've played with " + creature["name"])
         else:
-                print("Tama is happy!")
+                print(creature["name"] + " is done with your bullshit!")
 
 def sleep():
         if creature["energy"] < 10:
                 creature["energy"] += 1
-                print("Tama is sleeping...")
+                print(creature["name"] + " is sleeping...")
         else:
-                print("Tama isn't tired!")
+                print(creature["name"] + " is cranky.")
 
 def decay():
         hours_passed = (time.time() - creature["last_seen"]) / 3600 
@@ -49,7 +49,10 @@ def decay():
                 creature["hunger"] += 1
                 creature["happiness"] -= 1
                 creature["energy"] -= 1
+        elif hours_passed >= 10:
+                print(creature["name"] + " went outside to touch some grass...")
         creature["last_seen"] = time.time()
+        
 
 def save():
         with open("tama.json", "w") as f:
