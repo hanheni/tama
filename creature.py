@@ -76,9 +76,11 @@ def action():
                         break
                 else:
                         print("Отличный...")
-decay()
-status()
-action()
-save()
-status()
 
+
+if __name__ == "__main__":
+    decay()
+    status()
+    action()
+    save()
+    status()
