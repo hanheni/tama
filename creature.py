@@ -1,3 +1,4 @@
+from datetime import datetime
 import json
 import os
 import time
@@ -7,7 +8,7 @@ creature = {
         "hunger": 7,
         "happiness": 3,
         "energy": 5,
-        "last_seen": time.time()
+        "last_seen": time.time(),
 }
 
 def load():
@@ -52,7 +53,6 @@ def decay():
         elif hours_passed >= 10:
                 print(creature["name"] + " went outside to touch some grass...")
         creature["last_seen"] = time.time()
-        
 
 def save():
         with open("tama.json", "w") as f:
