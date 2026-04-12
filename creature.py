@@ -58,7 +58,7 @@ def save():
         with open("tama.json", "w") as f:
                 json.dump(creature, f)
 
-#TODO: replace hardcoded menu with dynamic COMMANDS list using " | ".join(COMMANDS) e.g COMMANDS = ["feed", "play", "sleep", "status", "quit"] and then to print print(" | ".join(COMMANDS))
+#TODO: replace hardcoded menu with dynamic e.g COMMANDS = ["feed", "play", "sleep", "status", "quit"] and then to print print(" | ".join(COMMANDS))
 
 def action():
         
